@@ -1,0 +1,30 @@
+<a *ngFor="let car of cars; let id=index"> 
+<ng-template #content let-modal >
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Car Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+        
+      <img src="assets/img/{{car.car_name}}.png"/>
+      <div class="list-group">
+
+          <li  class="list-group-item list-group-item-warning"><strong>Car Name  :   </strong>{{car.car_name}}</li>
+          <li  class="list-group-item list-group-item-danger"><strong>Car modal  :   </strong>{{car. car_modal}}</li>
+          <li  class="list-group-item list-group-item-success"><strong>Seating Capacity  :   </strong>{{car.seating_capacity }}  persons</li>
+          <li  class="list-group-item list-group-item-info"><strong>Car Price   :   </strong>{{car.car_price}}</li>
+         
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('close popUp')">close</button>
+    </div>
+  </ng-template>
+     <button class="btn btn-lg btn-outline-primary" style="margin:5px" (click)="open(content)" >{{car.car_name}} </button></a>
+  
+  <hr>
+  
+  
